@@ -1,0 +1,27 @@
+** 插入代码块
+在 Org-mode 中你可以直接开启新的缓冲区（Buffer）直接用相应的 Major Mode 来编辑代 码块内的内容。
+在代码块中使用 C-c ' 会直接打开对应模式的缓冲区（不仅限于 Lisp）。 这样就使在 Org-mode 中编辑代码变的十分方便快捷。
+使用 <s 然后 Tab 可以直接插入代码块的代码片段（Snippet），更多类似的代码片段 （Org-mode Easy Templates）可以在这里找到。
+#+BEGIN_SRC emacs-lisp
+  ;; Your code goes here
+  ;; 你的代码写在这里
+#+END_SRC
+
+** 添加 Org-mode 文本内语法高亮
+#+BEGIN_SRC emacs-lisp
+(require 'org)
+(setq org-src-fontify-natively t)
+#+END_SRC
+在 Org-mode 中重置有序列表序号可以直接使用 M-<RET> 。
+
+** Agenda 的使用
+;; 设置默认 Org Agenda 文件目录
+(setq org-agenda-files '("~/org"))
+;; 设置 org-agenda 打开快捷键
+(global-set-key (kbd "C-c a") 'org-agenda)
+你只需将你的 *.org 文件放入上面所指定的文件夹中就可以开始使用 Agenda 模式了。
+
+C-c C-s 选择想要开始的时间
+C-c C-d 选择想要结束的时间
+C-c a 可以打开 Agenda 模式菜单并选择不同的可视方式（ r ）
+
